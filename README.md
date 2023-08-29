@@ -16,22 +16,22 @@ Interfaz intuitiva para la creación y envío de pedidos.
 Monitorización de las solicitudes ingresadas y facultad de modificación de estado por parte del administrador.
 
 ## Tecnologías Aplicadas
-Java
-Marco de Trabajo Spring
-Spring MVC
-Spring Security
-Thymeleaf
-Hibernate
-MySQL
-HTML
-Bootstrap
-Javascript
-CSS
-Maven
-Requerimientos de Ejecución
-Versión 8 o posterior de Java
-Servidor MySQL
-Herramienta Maven
+- Java
+- Marco de Trabajo Spring
+- Spring MVC
+- Spring Security
+- Thymeleaf
+- Hibernate
+- MySQL
+- HTML
+- Bootstrap
+- Javascript
+- CSS
+- Maven
+- Requerimientos de Ejecución
+- Versión 8 o posterior de Java
+- Servidor MySQL
+- Herramienta Maven
 
 # Instalación y Uso
 ## Clona o descarga este repositorio en tu equipo local.
