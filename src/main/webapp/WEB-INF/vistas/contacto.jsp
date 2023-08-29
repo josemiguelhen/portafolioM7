@@ -56,8 +56,8 @@
 
             <!-- Botón de envío -->
             <div style="display: flex; justify-content: center;" class="mb-5">
-                <input type="submit" value="Enviar" class="boton-enviar">
-                <a href="/luffygames" class="btn btn-success" style="border: 5px; padding: 7px 15px;">Volver al inicio</a>
+                <input type="submit" value="Enviar" class="boton-enviar" style="border: 5px; padding: 7px 15px;">
+                <a href="/luffygames" class="btn btn-dark" style="border: 5px; padding: 7px 15px;">Volver al inicio</a>
             </div>
         </form>
     </div>

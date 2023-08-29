@@ -9,7 +9,7 @@ h1 {
 
 /* Estilos generales para el cuerpo del sitio */
 body {
-	background-color: black;
+	background-color: #D31E05;
 	color: white;
 	font-family: Arial, sans-serif;
 }
@@ -176,7 +176,7 @@ textarea {
 
 /* Estilos para los mensajes de validación */
 .validation-message {
-	color: red;
+	color: white;
 	display: none;
 	margin-top: 5px;
 	transition: margin-top 0.2s ease-in-out;
