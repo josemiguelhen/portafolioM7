@@ -1,232 +1,242 @@
--- Crear la base de datos
-CREATE DATABASE luffygames;
-
--- Utilizar la base de datos
-USE luffygames;
-
--- Crear usuario y otorgar permisos
-CREATE USER 'luffygames'@'localhost' IDENTIFIED BY '12345';
-GRANT ALL PRIVILEGES ON luffygames.* TO 'luffygames'@'localhost';
-
--- Crear tabla contacto
-CREATE TABLE contacto (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(70),
-    email VARCHAR(255),
-    comentario VARCHAR(100)
-);
-
--- Crear tabla usuarios
-CREATE TABLE usuarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user VARCHAR(50),
-    password VARCHAR(100),
-    rol VARCHAR(20),
-    email VARCHAR(100),
-    tipo ENUM('Cliente', 'Administrador') NOT NULL
-);
-
--- Crear tabla clientes
-CREATE TABLE clientes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombres VARCHAR(50),
-    apellidos VARCHAR(50),
-    telefono BIGINT,
-    comuna VARCHAR(45),
-    calle VARCHAR(50),
-    numeracion INT,
-    indicaciones VARCHAR(70),
-    id_usuario INT
-);
-
--- Script para agregar la FK en la tabla Clientes
-ALTER TABLE clientes
-ADD CONSTRAINT fk_cliente_usuario FOREIGN KEY (id_usuario)
-REFERENCES usuarios(id);
-
-CREATE TABLE administradores (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    rut INT NOT NULL,
-    nombres VARCHAR(50) NOT NULL,
-    apellidos VARCHAR(50) NOT NULL,
-    fecha_ingreso VARCHAR(50) NOT NULL,
-    id_usuario INT
-);
-
--- Insertar registros en la tabla usuarios, la contraseña sin encriptar para ambos usuarios de prueba es 1234
-INSERT INTO usuarios (user, password, email, rol, tipo)
-VALUES
-    ('Administrador', '$2a$10$fT5Z35HJKU2Q4/hJl8vf0uXzRyJ3MV.ESqXOVdgCVl724gAzYFDlK', 'admin1@gmail.com', 'ROLE_administrador', 'Administrador'),
-    ('Cliente', '$2a$10$arHZzeV6z9ailGY.XkDHT.rlbA4jl2R.Y8Hv61Njnu5KdvvS5xSwK', 'cliente1@gmail.com', 'ROLE_cliente', 'Cliente');
-
--- Insertar registros en la tabla administradores
-INSERT INTO administradores (rut, nombres, apellidos, fecha_ingreso, id_usuario)
-VALUES
-    ('12312312', 'Administrador', 'Administrador', '09/07/2021', 1);
-
--- Insertar registros en la tabla clientes
-INSERT INTO clientes (nombres, apellidos, telefono, comuna, calle, numeracion, indicaciones, id_usuario)
-VALUES
-    ('Cliente', 'Cliente', '912345678', 'las condes', 'las flores', '123', 'depto 1', 2);
-
-
--- Script para agregar la FK en la tabla Administradores
-ALTER TABLE administradores
-ADD CONSTRAINT fk_administrador_usuario FOREIGN KEY (id_usuario)
-REFERENCES usuarios(id);
-
--- Crear tabla productos
-CREATE TABLE productos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(50),
-    categoria VARCHAR(50),
-    precio INT,
-    imagenUrl VARCHAR(255)
-);
-
--- Insertar valores en la tabla productos
-INSERT INTO productos (nombre, categoria, precio, imagenUrl)
-VALUES
-    ('Gyosas', 'Picoteo japonés', 4200, '/sushipe/res/img/gyosas.jpg'),
-    ('Hosomaki', 'Picoteo japonés', 4200, '/sushipe/res/img/hosomaki.jpg'),
-    ('Nigiri', 'Picoteo japonés', 4200, '/sushipe/res/img/nigiri.jpg'),
-    ('Sakana Tataki', 'Picoteo japonés', 5200, '/sushipe/res/img/sakana-tataki.jpg'),
-    ('Sashimi', 'Picoteo japonés', 5200, '/sushipe/res/img/sashimi.jpg'),
-    ('Temaki', 'Picoteo japonés', 4200, '/sushipe/res/img/temaki.jpg'),
-    ('Ceviche tradicional', 'Picoteo pe', 7200, '/sushipe/res/img/ceviche-tradicional.jpg'),
-    ('Chicharrón Criollo', 'Picoteo pe', 5200, '/sushipe/res/img/chicharron-criollo.jpg'),
-    ('Pulpo al Olivo', 'Picoteo pe', 5200, '/sushipe/res/img/pulpo-al-olivo.jpg'),
-    ('Empanaditas Pe', 'Picoteo pe', 4200, '/sushipe/res/img/empanadas-pe.jpg'),
-    ('California Ebi', 'California Rolls', 6800, '/sushipe/res/img/california.ebi.jpg'),
-    ('California Pe', 'California Rolls', 6800, '/sushipe/res/img/california-pe.jpg'),
-    ('California Roll', 'California Rolls', 6800, '/sushipe/res/img/california-roll.jpg'),
-    ('California Sake', 'California Rolls', 6800, '/sushipe/res/img/california-sake.jpg'),
-    ('California Ebi Cheese', 'California Rolls', 6800, '/sushipe/res/img/california-ebi-cheese.jpg'),
-    ('Avocado Roll', 'Envueltos en palta', 7200, '/sushipe/res/img/avocado-roll.jpg'),
-    ('Tai Roll', 'Envueltos en palta', 7200, '/sushipe/res/img/Tai-roll.jpg'),
-    ('Ebi Furai', 'Envueltos en palta', 7200, '/sushipe/res/img/ebi-furai.jpg'),
-    ('Cai Roll', 'Envueltos en Salmón', 7200, '/sushipe/res/img/Cai roll.JPG'),
-    ('Salmon Roll', 'Envueltos en Salmón', 7200, '/sushipe/res/img/salmon-roll.jpg'),
-    ('Salmon Cheese Roll', 'Envueltos en Salmón', 7200, '/sushipe/res/img/salmon-cheese-roll.jpg'),
-    ('Sayonara Roll', 'Envueltos en Salmón', 7200, '/sushipe/res/img/sayonara-roll.jpg'),
-    ('Acevichado Roll', 'Nikkei', 7200, '/sushipe/res/img/acevichado-roll.jpg'),
-    ('Huancaína Roll', 'Nikkei', 6200, '/sushipe/res/img/huancaina-roll.jpg'),
-    ('Ají de Gallina Roll', 'Nikkei', 6200, '/sushipe/res/img/aji-de-gallina-roll.jpg'),
-    ('Pe Nikkei', 'Nikkei', 6200, '/sushipe/res/img/pe-nikkei.jpg'),
-    ('Ají de Gallina', 'Platos Pe', 6200, '/sushipe/res/img/aji-de-gallina.jpg'),
-    ('Arroz Chaufa', 'Platos Pe', 6200, '/sushipe/res/img/arroz chaufa.jpg'),
-    ('Lomo Saltado', 'Platos Pe', 6200, '/sushipe/res/img/lomo-saltado.jpg');
-
-    
--- Crear tabla de pedidos
-CREATE TABLE pedidos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    cliente_id INT,
-    indicaciones VARCHAR(70),
-    precio_total INT,
-    estado VARCHAR(20),
-    fecha_ingreso TIMESTAMP,
-    fecha_despacho TIMESTAMP,
-    FOREIGN KEY (cliente_id) REFERENCES clientes(id)
-);
-
--- Crear tabla intermedia para productos en pedidos
-CREATE TABLE pedidos_productos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    pedido_id INT,
-    producto_id INT,
-    cantidad INT,
-    FOREIGN KEY (pedido_id) REFERENCES pedidos(id),
-    FOREIGN KEY (producto_id) REFERENCES productos(id)
-);
-
--- Insertar el registro del pedido en la tabla pedidos
-INSERT INTO pedidos (cliente_id, indicaciones, precio_total, estado, fecha_ingreso, fecha_despacho)
-VALUES (1, 'Indicaciones del pedido', @total, 'Pendiente', NOW(), NULL);
-
--- Insertar productos en la tabla pedidos_productos
-INSERT INTO pedidos_productos (pedido_id, producto_id, cantidad) VALUES
-(1, 2, 1), -- Pedido 1, Producto 2, Cantidad 1
-(1, 3, 2); -- Pedido 1, Producto 3, Cantidad 2
-
--- Calcular el precio total para el pedido
-SET @total = (
-    SELECT SUM(p.precio * pp.cantidad)
-    FROM productos p
-    JOIN pedidos_productos pp ON p.id = pp.producto_id
-    WHERE pp.pedido_id = 1
-);
-
--- Query para seleccionar datos de clientes y productos asociados a un pedido
-SELECT
-    ped.id AS id_pedido,
-    c.nombres AS nombres_cliente,
-    c.apellidos AS apellidos_cliente,
-    c.calle AS calle_cliente,
-    c.numeracion AS numeracion_cliente,
-    c.indicaciones AS indicaciones_cliente,
-    pr.nombre AS nombre_producto,
-    pp.cantidad AS cantidad_producto,
-    ped.fecha_ingreso AS fecha_ingreso_pedido,
-    ped.fecha_despacho AS fecha_despacho_pedido,
-    ped.estado AS estado_pedido
-FROM pedidos ped
-JOIN clientes c ON ped.cliente_id = c.id
-JOIN pedidos_productos pp ON ped.id = pp.pedido_id
-JOIN productos pr ON pp.producto_id = pr.id
-WHERE ped.id = 1; 
-
--- Ordenar productos por categoría
-SELECT * FROM productos ORDER BY categoria, nombre;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
+CREATE DATABASE  IF NOT EXISTS `luffygames` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `luffygames`;
+-- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: luffygames
+-- ------------------------------------------------------
+-- Server version	8.0.34
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `administradores`
+--
+
+DROP TABLE IF EXISTS `administradores`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `administradores` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `rut` int NOT NULL,
+  `nombres` varchar(50) NOT NULL,
+  `apellidos` varchar(50) NOT NULL,
+  `fecha_ingreso` varchar(50) NOT NULL,
+  `id_usuario` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_administrador_usuario` (`id_usuario`),
+  CONSTRAINT `fk_administrador_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `administradores`
+--
+
+LOCK TABLES `administradores` WRITE;
+/*!40000 ALTER TABLE `administradores` DISABLE KEYS */;
+INSERT INTO `administradores` VALUES (1,159569349,'Patricio','Covarrubias','12/09/2022',1),(2,169343533,'Carlos','Zamorano','18/04/2021',2);
+/*!40000 ALTER TABLE `administradores` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `clientes`
+--
+
+DROP TABLE IF EXISTS `clientes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `clientes` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombres` varchar(50) DEFAULT NULL,
+  `apellidos` varchar(50) DEFAULT NULL,
+  `telefono` bigint DEFAULT NULL,
+  `comuna` varchar(45) DEFAULT NULL,
+  `calle` varchar(50) DEFAULT NULL,
+  `numeracion` int DEFAULT NULL,
+  `indicaciones` varchar(70) DEFAULT NULL,
+  `id_usuario` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_cliente_usuario` (`id_usuario`),
+  CONSTRAINT `fk_cliente_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `clientes`
+--
+
+LOCK TABLES `clientes` WRITE;
+/*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
+INSERT INTO `clientes` VALUES (1,'Consuelo','Hermosilla',945467567,'La Florida','Las Camelias',346,'depto 56',1),(2,'Margarita','Perez',954545454,'Ñuñoa','San Nicolas',234,'Deja en porteria',2),(3,'Marcelo','Paredes',935464657,'Puente Alto','Colo Colo',434,'Tocar Timbre',3);
+/*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `contacto`
+--
+
+DROP TABLE IF EXISTS `contacto`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `contacto` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(70) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `comentario` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contacto`
+--
+
+LOCK TABLES `contacto` WRITE;
+/*!40000 ALTER TABLE `contacto` DISABLE KEYS */;
+INSERT INTO `contacto` VALUES (1,'Monserrat Ramirez','monsera@gmail.com','Necesito saber si tienen consolas de PSP');
+/*!40000 ALTER TABLE `contacto` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pedidos`
+--
+
+DROP TABLE IF EXISTS `pedidos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pedidos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cliente_id` int DEFAULT NULL,
+  `indicaciones` varchar(70) DEFAULT NULL,
+  `precio_total` int DEFAULT NULL,
+  `estado` varchar(20) DEFAULT NULL,
+  `fecha_ingreso` timestamp NULL DEFAULT NULL,
+  `fecha_despacho` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `cliente_id` (`cliente_id`),
+  CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pedidos`
+--
+
+LOCK TABLES `pedidos` WRITE;
+/*!40000 ALTER TABLE `pedidos` DISABLE KEYS */;
+INSERT INTO `pedidos` VALUES (1,1,'Indicaciones del pedido',10,'Pendiente','2023-08-28 06:06:36',NULL),(2,1,'LLevar con ciudado',8400,'En Reparto','2023-08-28 08:03:37',NULL),(3,1,'Tocar timbre',8400,'Pendiente','2023-08-28 08:06:41',NULL),(4,1,'Dejar en puerta',110000,'Pendiente','2023-08-29 07:57:43',NULL),(5,1,'Dejar a nombre de Pedro Soto',105000,'Pendiente','2023-08-29 07:59:24',NULL),(6,1,'dejar en recepción',50000,'Pendiente','2023-08-29 08:37:23',NULL);
+/*!40000 ALTER TABLE `pedidos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pedidos_productos`
+--
+
+DROP TABLE IF EXISTS `pedidos_productos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pedidos_productos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `pedido_id` int DEFAULT NULL,
+  `producto_id` int DEFAULT NULL,
+  `cantidad` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `pedido_id` (`pedido_id`),
+  KEY `producto_id` (`producto_id`),
+  CONSTRAINT `pedidos_productos_ibfk_1` FOREIGN KEY (`pedido_id`) REFERENCES `pedidos` (`id`),
+  CONSTRAINT `pedidos_productos_ibfk_2` FOREIGN KEY (`producto_id`) REFERENCES `productos` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pedidos_productos`
+--
+
+LOCK TABLES `pedidos_productos` WRITE;
+/*!40000 ALTER TABLE `pedidos_productos` DISABLE KEYS */;
+INSERT INTO `pedidos_productos` VALUES (1,1,2,1),(2,1,3,2),(3,2,1,2),(4,3,1,2),(5,4,1,2),(6,4,3,2),(7,5,2,3),(8,6,3,2);
+/*!40000 ALTER TABLE `pedidos_productos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `productos`
+--
+
+DROP TABLE IF EXISTS `productos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `productos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(50) DEFAULT NULL,
+  `categoria` varchar(50) DEFAULT NULL,
+  `precio` int DEFAULT NULL,
+  `imagenUrl` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `productos`
+--
+
+LOCK TABLES `productos` WRITE;
+/*!40000 ALTER TABLE `productos` DISABLE KEYS */;
+INSERT INTO `productos` VALUES (1,'Juego Call of Duty','Juegos Play Station 4',30000,'/luffygames/res/img/play4cod.jpg'),(2,'Juego Diablo 3','Juegos Play Station 4',35000,'/luffygames/res/img/play4diablo3.jpg'),(3,'Juego Ghost','Juegos Play Station 4',25000,'/luffygames/res/img/play4ghost.jpg'),(4,'Juego UFC','Juegos Play Station 4',30000,'/luffygames/res/img/play4ufc.jpeg'),(5,'Juego Fifa 23','Juegos Play Station 5',40000,'/luffygames/res/img/play5fifa.jpeg'),(6,'Juego Street Fighter','Juegos Play Station 5',35000,'/luffygames/res/img/play5sf.jpg'),(7,'Juego Hogwarts Legacy','Juegos Play Station 5',50000,'/luffygames/res/img/ps5howleg.jpeg'),(8,'Juego Jedi','Juegos Play Station 5',34000,'/luffygames/res/img/ps5jedi.jpeg'),(9,'Juego Kirbys','Juegos Nintendo  Switch',50000,'/luffygames/res/img/nintendokirbys.jpeg'),(10,'Juego Sonic','Juegos Nintendo Switch',45000,'/luffygames/res/img/nintendosonic.jpeg'),(11,'Juego Zelda','Juegos Nintendo Switch',50000,'/luffygames/res/img/nintendozeldaa.jpg'),(12,'Juego Metroid','Juegos Nintengo Switch',40000,'/luffygames/res/img/nintendometroid.jpg'),(13,'Consola Switch','Consolas',250000,'/luffygames/res/img/consolaswitchh.jpg'),(14,'Consola Lite','Consolas',160000,'/luffygames/res/img/consolalite.png'),(15,'Consola PS4','Consolas',250000,'/luffygames/res/img/consolaplay44.jpg'),(16,'Consola PS5','Consolas',500000,'/luffygames/res/img/consolaps5.png'),(17,'Consola Series X','Consolas',400000,'/luffygames/res/img/consolaseriex.jpg'),(18,'Control PS4','Accesorios PS4',45000,'/luffygames/res/img/controlps4.jpg'),(19,'Play Station VR2','Accesorios PS5',70000,'/luffygames/res/img/accesoriaps5.jpg'),(20,'Control PS4 2','Accesorios PS4',45000,'/luffygames/res/img/controlps44.jpg'),(21,'Control PS5 Kamuflaje Dualsense','Accesorios PS5',50000,'/luffygames/res/img/controlplay5kamu.jpg'),(22,'Cargador Controles PS5','Accesorios PS5',40000,'/luffygames/res/img/accesoriaps55.png'),(23,'HD Camara PS5','Accesorios PS5',47000,'/luffygames/res/img/camaraps5.png'),(24,'Soporte Anti-deslizante PSvita','Accesorios PSvita',6000,'/luffygames/res/img/soportepsvita.jpg'),(25,'Carcasa Protectora PSvita','Accesorios PSvita',6000,'/luffygames/res/img/carcasapsvita.jpg'),(26,'Fuente Adaptador PSvita','Accesorios PSvita',10000,'/luffygames/res/img/adaptadorpsvita.jpg'),(27,'Astron Fuente PSvita','Accesorios PSvita',10000,'/luffygames/res/img/fuentepsvita.jpg'),(28,'Pantherlord Kit de Inicio PSP','Accesorios PSP',5000,'/luffygames/res/img/pantherlordpsp.jpg'),(29,'Adaptador carga PSP','Accesorios PSP',10000,'/luffygames/res/img/adaptadorpsp.jpg'),(30,'Headset Gamer','Accesorios PS4',20000,'/luffygames/res/img/headsetps4.png');
+/*!40000 ALTER TABLE `productos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usuarios` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user` varchar(50) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `rol` varchar(20) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `tipo` enum('Cliente','Administrador') NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuarios`
+--
+
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (1,'Administrador','$2a$10$jpQMiSnyIHQ6JSe01qB/iu.QyFKIdiIP25o82R.IW5hn7XxGfQS9K','ROLE_administrador','admin1@gmail.com','Administrador'),(2,'Cliente','$2a$10$jpQMiSnyIHQ6JSe01qB/iu.QyFKIdiIP25o82R.IW5hn7XxGfQS9K','ROLE_cliente','cliente1@gmail.com','Cliente'),(3,'Administrador2','$2a$10$tZh/JvJWZRhqRB5oysrQfena30Gu1g409ysIOA2oYEoAy8ggqGJPm','ROLE_administrador','admin2@gmail.com','Administrador'),(4,'Cliente2','$2a$10$tZh/JvJWZRhqRB5oysrQfena30Gu1g409ysIOA2oYEoAy8ggqGJPm','ROLE_cliente','cliente2@gmail.com','Cliente'),(5,'Cliente3','$2a$10$tZh/JvJWZRhqRB5oysrQfena30Gu1g409ysIOA2oYEoAy8ggqGJPm','ROLE_cliente','cliente3@gmail.com','Cliente');
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping events for database 'luffygames'
+--
+
+--
+-- Dumping routines for database 'luffygames'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-08-29  5:01:56
