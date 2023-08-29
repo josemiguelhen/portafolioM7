@@ -8,7 +8,6 @@ model\service\ProductoService.class
 model\controller\ErrorController.class
 model\controller\LoginController.class
 model\entity\Administrador.class
-model\controller\CartaController.class
 model\repository\IUsuarioRepository.class
 model\service\PedidoService.class
 model\entity\Contacto.class
@@ -27,6 +26,7 @@ model\entity\PedidosProductos.class
 model\service\PedidosProductosService.class
 model\entity\Cliente.class
 model\service\UsuarioService.class
+model\controller\ProductoController.class
 model\repository\IPedidoRepository.class
 model\repository\IProductoRepository.class
 model\controller\ExitoController.class

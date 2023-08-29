@@ -24,7 +24,7 @@
 				<p>Usuario o contraseña incorrecto, intente nuevamente...</p>
 				<!-- Agregar imagen vinculada desde la carpeta "img" en el proyecto -->
 				<div>
-					<img src="/luffygames/res/img/gato negro.jpg" alt="gato negro">
+					<img src="/luffygames/res/img/error-imagen.jpg" alt="gato negro">
 				</div>
 				<p>Serás redirigido automáticamente al inicio de sesión en 5
 					segundos.</p>

@@ -149,7 +149,7 @@ h5 {
 /* Estilos para el formulario */
 form {
 	margin-top: 20px;
-	color: black;
+	color:white;
 }
 
 /* Estilos para los campos de entrada y áreas de texto */
@@ -291,7 +291,7 @@ textarea {
 
 /* Estilos para la carta */
 /* Configuramos el margen y el padding del cuerpo del documento */
-body.carta {
+body.producto {
 	margin: 0;
 	padding: 0;
 }

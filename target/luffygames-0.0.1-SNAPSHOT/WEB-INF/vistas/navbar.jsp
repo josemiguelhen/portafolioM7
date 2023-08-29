@@ -66,8 +66,8 @@
 								style="color: white;">Inicio</a></li>
 							<li class="nav-item"><a class="nav-link" href="contacto"
 								style="color: white;">Contacto</a></li>
-							<li class="nav-item"><a class="nav-link" href="carta"
-								style="color: white;">Carta</a></li>
+							<li class="nav-item"><a class="nav-link" href="producto"
+								style="color: white;">Producto</a></li>
 							<li class="nav-item"><a class="nav-link" href="editarCliente"
 								style="color: white;">Edita tus datos</a></li>
 							<li class="nav-item"><a class="nav-link" href="crearPedido"

@@ -291,7 +291,7 @@ textarea {
 
 /* Estilos para la carta */
 /* Configuramos el margen y el padding del cuerpo del documento */
-body.carta {
+body.producto {
 	margin: 0;
 	padding: 0;
 }

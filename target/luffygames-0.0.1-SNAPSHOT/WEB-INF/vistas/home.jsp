@@ -81,23 +81,23 @@
 	<div class="gallery-container">
 		<div class="gallery">
 			<a href="/luffygames/res/img/play4cod.jpg"
-				data-fancybox="gallery" data-caption="Acevichado roll"> <img
-				src="/luffygames/res/img/play4cod.jpg" alt="Acevichado roll">
+				data-fancybox="gallery" data-caption="Juego Call of Duty PS4"> <img
+				src="/luffygames/res/img/play4cod.jpg" alt="Juego Call of Duty PS4">
 			</a> <a href="/luffygames/res/img/play4diablo3.jpg" data-fancybox="gallery"
-				data-caption="California pe"> <img
-				src="/luffygames/res/img/play4diablo3.jpg" alt="California pe">
+				data-caption="Juego Diablo 3 PS4"> <img
+				src="/luffygames/res/img/play4diablo3.jpg" alt="Juego Diablo 3 PS4">
 			</a> <a href="/luffygames/res/img/playsf.jpg" data-fancybox="gallery"
-				data-caption="Sakana tataki"> <img
-				src="/luffygames/res/img/play5sf.jpg" alt="Sakana Tataki">
+				data-caption="Juego Street Fighter PS5"> <img
+				src="/luffygames/res/img/play5sf.jpg" alt="Juego Street Fighter PS5">
 			</a> <a href="/luffygames/res/img/play5fifa.jpeg" data-fancybox="gallery"
-				data-caption="Temaki"> <img src="/luffygames/res/img/play5fifa.jpeg"
-				alt="Temaki">
+				data-caption="Juego Fifa 23 PS5"> <img src="/luffygames/res/img/play5fifa.jpeg"
+				alt="Juego Fifa 23 PS5">
 			</a> <a href="/luffygames/res/img/nintendosonic.jpeg" data-fancybox="gallery"
-				data-caption="Tai roll"> <img
-				src="/luffygames/res/img/nintendosonic.jpeg" alt="Tai roll">
+				data-caption="Juego Sonic Nintendo Switch"> <img
+				src="/luffygames/res/img/nintendosonic.jpeg" alt="Juego Sonic Nintendo Switch">
 			</a> <a href="/luffygames/res/img/nintendozeldaa.jpg"
-				data-fancybox="gallery" data-caption="Furai sake roll"> <img
-				src="/luffygames/res/img/nintendozeldaa.jpg" alt="Furai sake roll">
+				data-fancybox="gallery" data-caption="Juego Zelda Nintendo Switch"> <img
+				src="/luffygames/res/img/nintendozeldaa.jpg" alt="Juego Zelda Nintendo Switch">
 			</a>
 
 		</div>
