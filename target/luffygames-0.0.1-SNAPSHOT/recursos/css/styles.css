@@ -1,0 +1,428 @@
+/* Establecemos el conjunto de caracteres */
+@charset "UTF-8";
+
+/* Estilos para los encabezados de nivel 1 */
+h1 {
+	margin-top: 2rem;
+	margin-left: 5rem;
+}
+
+/* Estilos generales para el cuerpo del sitio */
+body {
+	background-color: black;
+	color: white;
+	font-family: Arial, sans-serif;
+}
+
+/* Estilos para el contenedor del logo */
+.logo-container {
+	text-align: center;
+	margin-top: 1rem;
+	/* Ajusta el margen superior según tus preferencias */
+}
+
+/* Estilos para la imagen del logo */
+.logo-container img {
+	max-width: 200px;
+}
+
+/* Estilos para las celdas de tabla encabezado y cuerpo */
+.table th,
+.table td {
+	color: white;
+}
+
+/* Estilos para la barra de navegación */
+/* Estilos para la barra de navegación con fondo negro */
+.navbar.bg-black {
+	background-color: #000000;
+}
+
+/* Estilos para los enlaces de navegación en la barra */
+.navbar-nav .nav-link {
+	font-size: 20px;
+}
+
+/* Estilos para la imagen de la marca en la barra de navegación */
+.navbar-brand img {
+	max-width: 300px;
+	width: 100%;
+}
+
+/* Estilos para centrar el contenido en pantalla */
+.centered-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 50vh;
+}
+
+/* Estilos para el pie de página */
+footer {
+	background-color: rgb(0, 0, 0);
+	color: #fff;
+}
+
+/* Estilos para los encabezados de nivel 5 */
+h5 {
+	letter-spacing: 2px;
+}
+
+/* Estilos personalizados para el encabezado de nivel 1 */
+.custom-h1 {
+	text-align: center;
+}
+
+/* Estilos personalizados para las etiquetas de formulario */
+.custom-label {
+	font-size: 22px;
+	/* Tamaño de fuente personalizado para la etiqueta */
+	text-align: center;
+}
+
+/* Estilos para la imagen */
+.img-location-container {
+	max-height: 200px;
+}
+
+/* Estilos para los enlaces de redes sociales */
+.social-link {
+	color: #fff;
+}
+
+/* Estilos para la tabla responsive */
+.table-responsive {
+	color: #ccc;
+}
+
+/* Ajusta los estilos de la tabla para evitar conflictos */
+.custom-table {
+    height: auto; /* O ajusta el ancho según tus necesidades */
+    /* Otros estilos específicos que puedas necesitar */
+}
+
+
+/* Estilos para las tablas con borde */
+.table-bordered {
+	border: 1px solid #dee2e6;
+}
+
+/* Estilos para el texto centrado */
+.text-center {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para la galería de la página de inicio */
+.gallery a img {
+	max-width: 190px;
+	height: auto;
+}
+
+/* Estilos para los elementos de la galería en la página de inicio */
+.gallery a {
+	display: inline-block;
+	margin-bottom: 9rem;
+	margin-left: 2rem;
+}
+
+/* Estilos para la cantidad de producto */
+.producto-cantidad {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+/* Estilos para la imagen de producto */
+.product-image {
+	max-width: 120px;
+	height: auto;
+	margin-bottom: 10px;
+	/* Ajusta el margen inferior de la imagen */
+}
+
+/* Estilos personalizados para el encabezado de nivel 3 */
+.custom-h3 {
+	margin-left: 7rem;
+}
+
+/* Estilos para el formulario */
+form {
+	margin-top: 20px;
+	color: black;
+}
+
+/* Estilos para los campos de entrada y áreas de texto */
+.campo {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 15px;
+}
+
+/* Estilos para los campos de entrada de texto, correo y contraseña, y áreas de texto */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+	color: black;
+	width: 100%;
+}
+
+/* Estilos para el grupo de entrada pequeño */
+.small-input-group {
+	max-width: 40px;
+	/* Ajusta el ancho como desees */
+}
+
+/* Estilos para los mensajes de validación */
+.validation-message {
+	color: red;
+	display: none;
+	margin-top: 5px;
+	transition: margin-top 0.2s ease-in-out;
+}
+
+/* Estilos específicos para el mensaje de validación del campo de usuario */
+#usuarioValidationMessage {
+	margin-top: -5px;
+}
+
+/* Estilos específicos para el mensaje de validación del campo de contraseña */
+#passwordValidationMessage {
+	margin-top: -5px;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-bottom: 20px;
+    padding-top: auto; /* Ajusta este valor según tus necesidades */
+}
+
+
+/* Estilos para centrar los contenidos de la página de error */
+.error-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	padding: 20px;
+	text-align: center;
+}
+
+/* Estilos para los encabezados de nivel 1 en la página de error */
+.error-container h1 {
+	font-size: 36px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+/* Estilos para los párrafos en la página de error */
+.error-container p {
+	font-size: 18px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+/* Estilos para la imagen en la página de error */
+.error-container img {
+	max-width: 50%;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+/* Estilos para los enlaces en la página de error */
+.error-container a {
+	font-size: 16px;
+	text-align: center;
+}
+
+/* Estilos para centrar los contenidos de la página de éxito */
+.exito-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	padding: 20px;
+	text-align: center;
+}
+
+/* Estilos para los encabezados de nivel 1 en la página de éxito */
+.exito-container h1 {
+	font-size: 36px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+/* Estilos para los párrafos en la página de éxito */
+.exito-container p {
+	font-size: 18px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+/* Estilos para la imagen en la página de éxito */
+.exito-container img {
+	max-width: 30%;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+/* Estilos para los enlaces en la página de éxito */
+.exito-container a {
+	font-size: 16px;
+	text-align: center;
+}
+
+/* Estilos para la celda de formulario */
+.formulario-celda {
+	vertical-align: middle;
+}
+
+/* Agregamos un salto de línea antes del contador */
+.contador:before {
+	content: "\a";
+	white-space: pre;
+}
+
+/* Estilos para la carta */
+/* Configuramos el margen y el padding del cuerpo del documento */
+body.carta {
+	margin: 0;
+	padding: 0;
+}
+
+/* Estilos para el menú de la carta */
+.portfolio-menu {
+	text-align: center;
+}
+
+/* Estilos para los encabezados de nivel 4 en el menú de la carta */
+h4 {
+	color: white;
+}
+
+/* Estilos para los elementos del menú de la carta */
+.portfolio-menu ul li {
+	color: white;
+}
+
+/* Transiciones para los elementos del menú */
+.portfolio-menu ul li {
+	display: inline-block;
+	margin: 0;
+	list-style: none;
+	padding: 10px 15px;
+	cursor: pointer;
+	transition: all 0.5s ease;
+}
+
+/* Configuración de flex y tamaño para los elementos del menú */
+.portfolio-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+/* Estilos para los elementos individuales del menú */
+.portfolio-item .item {
+	width: 25%;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+/* Estilos para las tablas */
+/* Estilos generales para las tablas */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+/* Estilos para las celdas de encabezado y cuerpo de las tablas */
+.table th,
+.table td {
+	padding: 10px;
+	text-align: center;
+	border: 1px solid #ccc;
+}
+
+/* Estilos específicos para las celdas de encabezado de las tablas */
+.table th {
+	background-color: transparent;
+	font-weight: bold;
+}
+
+/* Estilos para las casillas de verificación de estado */
+.estado-checkbox {
+	margin-right: 5px;
+}
+
+/* Estilos para el contador */
+.contador {
+	font-weight: bold;
+	color: #007bff;
+}
+
+/* Estilos para las listas no ordenadas */
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+/* Estilos para los elementos de las listas no ordenadas */
+ul li {
+	margin-bottom: 5px;
+}
+
+/* Media query para la carta */
+@media (max-width: 767px) {
+
+	/* Ajustamos el ancho de los elementos en la carta en pantallas pequeñas */
+	.portfolio-item .item {
+		max-width: 50%;
+	}
+
+	/* Media query para pantallas móviles (tamaño extra pequeño) */
+	@media (max-width: 575.98px) {
+
+		/* Estilos para el contenedor de la marca en la barra de navegación cuando se despliega el menú */
+		.navbar-brand-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		/* Cambiamos el orden del botón del menú en la barra de navegación */
+		.navbar-toggler {
+			order: 2;
+		}
+
+		/* Ajustamos el ancho de la marca en la barra de navegación */
+		.navbar-brand {
+			max-width: 50%;
+		}
+
+		/* Estilos para el contenido del menú desplegable en la barra de navegación */
+		.navbar-collapse {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			background-color: black;
+			padding: 10px;
+			text-align: right;
+			display: none;
+		}
+
+		/* Mostramos el contenido del menú desplegable cuando el botón del menú está abierto */
+		.navbar-toggler[aria-expanded="true"]+.navbar-collapse {
+			display: block;
+		}
+	}
+
+}
