@@ -36,7 +36,7 @@ Herramienta Maven
 # Instalación y Uso
 ## Clona o descarga este repositorio en tu equipo local.
 
-Asegura tener configurada una base de datos MySQL, y ajusta los parámetros de conexión en el archivo application.properties. Hallarás el Script para la creación de la base de datos en este repositorio. Dicho script engloba la generación de 2 usuarios de prueba, 'Cliente' y 'Administrador', asignando sus respectivas funciones para explorar la plataforma. La contraseña común para ambos usuarios es '1234'. Incluso se añade una solicitud de prueba para evaluar la función "Ver Solicitudes". Para registrar un usuario nuevo, el proceso puede completarse directamente desde la aplicación.
+Asegura tener configurada una base de datos MySQL, y ajusta los parámetros de conexión en el archivo application.properties. Hallarás el Script para la creación de la base de datos en este repositorio. Dicho script engloba la generación de 2 usuarios de prueba, 'Cliente' y 'Administrador', asignando sus respectivas funciones para explorar la plataforma. La contraseña común para ambos usuarios es '12345'. Incluso se añade una solicitud de prueba para evaluar la función "Ver Solicitudes". Para registrar un usuario nuevo, el proceso puede completarse directamente desde la aplicación.
 
 Importa el proyecto en tu ambiente de desarrollo (Eclipse JEE, por ejemplo).
 
