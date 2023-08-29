@@ -25,7 +25,7 @@
 		<p>Su pedido ha sido ingresado con éxito</p>
 		<!-- Agregar imagen vinculada desde la carpeta "img" en el proyecto -->
 		<div style="text-align: center;">
-			<img src="/luffygames/res/img/gato de la suerte.jpg"
+			<img src="/luffygames/res/img/mariobrofeliz.png"
 				alt="Imagen de éxito">
 		</div>
 		<p>Redireccionando...</p>

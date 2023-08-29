@@ -43,7 +43,8 @@
 				<li class="btn btn-outline-dark" data-filter=".con">Consolas</li>
 				<li class="btn btn-outline-dark" data-filter=".aps4">Accesorios ps4</li>
 				<li class="btn btn-outline-dark" data-filter=".aps5">Accesorios ps5</li>
-				<li class="btn btn-outline-dark text" data-filter=".ans">Accesorios nintendo switch</li>
+				<li class="btn btn-outline-dark text" data-filter=".apsv">Accesorios PSvita</li>
+				<li class="btn btn-outline-dark text" data-filter=".apsp">Accesorios PSP</li>
 				<li class="btn btn-outline-dark text" data-filter=".item">Todos</li>
 			</ul>
 		</div>
@@ -282,9 +283,9 @@
 
 			<!-- Producto 21 -->
 			<div class="item aps5 col-lg-3 col-md-4 col-6 col-sm">
-				<a href="/luffygames/res/img/controlps5kamu.jpg"
+				<a href="/luffygames/res/img/controlplay5kamu.jpg"
 					class="fancylight popup-btn"> <img class="img-fluid"
-					src="/luffygames/res/img/controlps5kamu.jpg.jpg"
+					src="/luffygames/res/img/controlplay5kamu.jpg"
 					alt="Control PS5 Kamuflaje">
 				</a>
 				<div class="image-details">
@@ -316,10 +317,10 @@
 			</div>
 
 			<!-- Producto 24 -->
-			<div class="item nik col-lg-3 col-md-4 col-6 col-sm">
+			<div class="item apsv col-lg-3 col-md-4 col-6 col-sm">
 				<a href="/luffygames/res/img/soportepsvita.jpg"
 					class="fancylight popup-btn"> <img class="img-fluid"
-					src="/luffygames/res/img/hsoportepsvita.jpg" alt="Soporte PSvita">
+					src="/luffygames/res/img/soportepsvita.jpg" alt="Soporte PSvita">
 				</a>
 				<div class="image-details">
 					<p>Soporte Anti-deslizante PSvita - $6000</p>
@@ -327,7 +328,7 @@
 			</div>
 
 			<!-- Producto 25 -->
-			<div class="item nik col-lg-3 col-md-4 col-6 col-sm">
+			<div class="item apsv col-lg-3 col-md-4 col-6 col-sm">
 				<a href="/luffygames/res/img/carcasapsvita.jpg"
 					class="fancylight popup-btn"> <img class="img-fluid"
 					src="/luffygames/res/img/carcasapsvita.jpg"
@@ -340,7 +341,7 @@
 
 
 			<!-- Producto 26 -->
-			<div class="item nik col-lg-3 col-md-4 col-6 col-sm">
+			<div class="item apsv col-lg-3 col-md-4 col-6 col-sm">
 				<a href="/luffygames/res/img/adaptadorpsvita.jpg"
 					class="fancylight popup-btn"> <img class="img-fluid"
 					src="/luffygames/res/img/adaptadorpsvita.jpg" alt="Fuente Adaptador PSvita">
@@ -351,10 +352,10 @@
 			</div>
 
 			<!-- Producto 27 -->
-			<div class="item ppe col-lg-3 col-md-4 col-6 col-sm">
-				<a href="/luffygames/res/img/fuentepsvita.jpeg"
+			<div class="item apsv col-lg-3 col-md-4 col-6 col-sm">
+				<a href="/luffygames/res/img/fuentepsvita.jpg"
 					class="fancylight popup-btn"> <img class="img-fluid"
-					src="/luffygames/res/img/fuentepsvita.jpeg" alt="Fuente PSvita">
+					src="/luffygames/res/img/fuentepsvita.jpg" alt="Fuente PSvita">
 				</a>
 				<div class="image-details">
 					<p>Astron Fuente PSvita- $10.000</p>
@@ -362,10 +363,10 @@
 			</div>
 
 			<!-- Producto 28 -->
-			<div class="item ppe col-lg-3 col-md-4 col-6 col-sm">
-				<a href="/luffygames/res/img/pantherlord.jpeg"
+			<div class="item apsp col-lg-3 col-md-4 col-6 col-sm">
+				<a href="/luffygames/res/img/pantherlordpsp.jpg"
 					class="fancylight popup-btn"> <img class="img-fluid"
-					src="/luffygames/res/img/pantherlord.jpeg" alt="Pantherlord PSP">
+					src="/luffygames/res/img/pantherlordpsp.jpg" alt="Pantherlord PSP">
 				</a>
 				<div class="image-details">
 					<p>Pantherlord Kit de inicio PSP- $5.000</p>
@@ -373,10 +374,10 @@
 			</div>
 
 			<!-- Producto 29 -->
-			<div class="item ppe col-lg-3 col-md-4 col-6 col-sm">
-				<a href="/luffygames/res/img/adaptadorpsp.jpeg"
+			<div class="item apsp col-lg-3 col-md-4 col-6 col-sm">
+				<a href="/luffygames/res/img/adaptadorpsp.jpg"
 					class="fancylight popup-btn"> <img class="img-fluid"
-					src="/luffygames/res/img/adaptadorpsp.jpeg" alt="Adapatador PSP">
+					src="/luffygames/res/img/adaptadorpsp.jpg" alt="Adapatador PSP">
 				</a>
 				<div class="image-details">
 					<p>Adaptador carga PSP- $10.000</p>
@@ -384,13 +385,13 @@
 			</div>
 			
 				<!-- Producto 30 -->
-			<div class="item ppe col-lg-3 col-md-4 col-6 col-sm">
+			<div class="item aps4 col-lg-3 col-md-4 col-6 col-sm">
 				<a href="/luffygames/res/img/headsetps4.png"
 					class="fancylight popup-btn"> <img class="img-fluid"
-					src="/luffygames/res/img/headset.png" alt="Headset GamerPS4">
+					src="/luffygames/res/img/headsetps4.png" alt="Headset GamerPS4">
 				</a>
 				<div class="image-details">
-					<p>Headset Gamer - $20.000</p>
+					<p>Headset Gamer PS4- $20.000</p>
 				</div>
 			</div>
 		</div>
