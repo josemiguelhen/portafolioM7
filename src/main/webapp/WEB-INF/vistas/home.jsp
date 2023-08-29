@@ -80,9 +80,6 @@
 	<!-- Galería de imágenes -->
 	<div class="gallery-container">
 		<div class="gallery">
-			<a href="/luffygames/res/img/play4cod.jpg"
-				data-fancybox="gallery" data-caption="Juego Call of Duty PS4"> <img
-				src="/luffygames/res/img/play4cod.jpg" alt="Juego Call of Duty PS4">
 			</a> <a href="/luffygames/res/img/play4diablo3.jpg" data-fancybox="gallery"
 				data-caption="Juego Diablo 3 PS4"> <img
 				src="/luffygames/res/img/play4diablo3.jpg" alt="Juego Diablo 3 PS4">
